@@ -4,9 +4,11 @@
     <p>words: {{ selectedWords }}</p>
     <p>table:</p>
 
-    <div class="row" v-for="(row, index) in table" :key="index">
-      <div class="letter" v-for="(letter, index) in row" :key="index">
-        {{ letter }}
+    <div class="col">
+      <div class="row" v-for="(row, index) in table" :key="index">
+        <div class="letter" v-for="(letter, index) in row" :key="index">
+          {{ letter }}
+        </div>
       </div>
     </div>
   </div>
@@ -105,6 +107,14 @@ export default {
 <style scoped>
 .home {
   padding: 10px;
+}
+.col {
+  display: flex;
+  flex-flow: column;
+}
+.row {
+  display: flex;
+  flex-flow: row;
 }
 .letter {
   padding: auto;
