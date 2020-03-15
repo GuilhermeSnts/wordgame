@@ -1,13 +1,12 @@
 <template>
   <div class="home">
-    <h1>the project begins</h1>
+    <h1>The Word Game</h1>
     <p>words: {{ selectedWords }}</p>
-    <p>table:</p>
 
-    <div class="col">
+    <div class="board col">
       <div class="row" v-for="(row, index) in table" :key="index">
-        <div class="letter" v-for="(letter, index) in row" :key="index">
-          {{ letter }}
+        <div v-for="(letter, index) in row" :key="index">
+          <PushButton :letter="letter" />
         </div>
       </div>
     </div>
@@ -15,8 +14,13 @@
 </template>
 
 <script>
+import PushButton from "@/components/PushButton";
 export default {
   name: "home",
+  components: {
+    PushButton
+  },
+
   data: () => ({
     dicionary: [
       "abacaxi",
@@ -104,29 +108,19 @@ export default {
 };
 </script>
 
-<style scoped>
-.home {
-  padding: 10px;
-}
-.col {
-  display: flex;
-  flex-flow: column;
-}
-.row {
-  display: flex;
-  flex-flow: row;
-}
-.letter {
-  padding: auto;
-  margin: 2px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  border: 1px solid grey;
-  border-radius: 2px;
-  background: rgb(248, 248, 248);
-}
-.letter:hover {
-  background: lightgrey;
-}
+<style lang="sass" scoped>
+.home
+  padding: 10px
+  display: flex
+  flex-flow: column
+  align-items: center
+  justify-content: center
+
+.col
+  display: flex
+  flex-flow: column
+
+.row
+  display: flex
+  flex-flow: row
 </style>

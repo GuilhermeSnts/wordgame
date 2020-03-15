@@ -1,26 +1,20 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="deep-purple"
-      dark
-    >
-      <v-toolbar-title>Wordgame</v-toolbar-title>
-    </v-app-bar>
-
-    <v-content>
-      <router-view/>
-    </v-content>
-  </v-app>
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
     a: ""
-  }),
+  })
 };
 </script>
+
+<style lang="sass" scoped>
+body
+  background: #FAF5E1
+</style>
