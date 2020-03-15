@@ -14,7 +14,7 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 body
   background: #FAF5E1
 </style>

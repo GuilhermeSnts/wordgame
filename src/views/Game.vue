@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <h1>The Word Game</h1>
-    <p>words: {{ selectedWords }}</p>
+    <h1 class="title">The Word Game</h1>
 
     <div class="board col">
       <div class="row" v-for="(row, index) in table" :key="index">
@@ -109,12 +108,18 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+$wenge: #626151
+
 .home
   padding: 10px
   display: flex
   flex-flow: column
   align-items: center
   justify-content: center
+
+.title
+  color: $wenge
+
 
 .col
   display: flex
