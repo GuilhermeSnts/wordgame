@@ -73,9 +73,11 @@ export default {
   }),
   methods: {
     generateWords() {
+      const dicionary = this.dicionary;
       for (let index = 0; index < this.totalWords; index++) {
-        let sort = Math.round(Math.random() * (this.dicionary.length - 1));
-        this.selectedWords.push(this.dicionary[sort]);
+        let sort = Math.abs(Math.round(Math.random() * (dicionary.length - 1)));
+        this.selectedWords.push(dicionary[sort]);
+        dicionary.splice(sort, 1);
       }
     },
     generateTable() {
