@@ -1,6 +1,13 @@
 <template>
   <div class="home">
     <h1 class="title">The Word Game</h1>
+    <div class="row chips">
+      <WordChip
+        :word="word"
+        v-for="(word, index) in selectedWords"
+        :key="index"
+      />
+    </div>
 
     <div class="board col">
       <div class="row" v-for="(row, index) in table" :key="index">
@@ -14,10 +21,12 @@
 
 <script>
 import PushButton from "@/components/PushButton";
+import WordChip from "@/components/WordChip";
 export default {
   name: "home",
   components: {
-    PushButton
+    PushButton,
+    WordChip
   },
 
   data: () => ({
@@ -120,6 +129,8 @@ $wenge: #626151
 .title
   color: $wenge
 
+.chips
+  margin-bottom: 10px
 
 .col
   display: flex
